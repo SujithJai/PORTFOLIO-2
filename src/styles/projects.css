@@ -101,12 +101,7 @@
 }
 
 .gallery__person {
-  position: absolute;
-  display: block;
-  opacity: 0;
-  pointer-events: none;
-  user-select: none;
-  will-change: transform, opacity;
+  display: none;
 }
 
 /* --------------------------------------------------------------------------
@@ -153,8 +148,7 @@
   opacity: 0.55;
 }
 .g-label--ideas {
-  top: clamp(90px, 15.5vh, 150px);
-  left: clamp(20px, 3vw, 52px);
+  display: none;
 }
 .g-label--ideas b { font-weight: 500; color: rgba(232, 226, 220, 0.82); }
 .g-label--scroll {

@@ -10,52 +10,34 @@
 export const FRAME = [1600, 900];
 
 export const CARDS = [
-  { id: 'p01_timeless', title: 'Timeless Experiences',
-    box: [213, 72, 384, 273], depth: 0.45,
-    tint: [0.309, 0.334, 0.382] },
-  { id: 'p02_game', title: 'More Than A Game',
-    box: [63, 251, 428, 269], depth: 0.25,
-    tint: [0.249, 0.267, 0.295] },
-  { id: 'p03_build', title: 'Build Without Limits',
-    box: [566, 41, 471, 288], depth: 0.6,
-    tint: [0.414, 0.291, 0.291] },
-  { id: 'p04_driven', title: 'Driven by Better Design',
-    box: [998, 95, 460, 377], depth: 0.45,
-    tint: [0.322, 0.278, 0.261] },
-  { id: 'p05_ideas', title: 'Your Ideas In Motion',
-    box: [394, 358, 232, 198], depth: 0.8,
-    tint: [0.39, 0.303, 0.234] },
-  { id: 'p06_sound', title: 'Sound & Second Motion',
-    box: [568, 364, 173, 203], depth: 0.9,
-    tint: [0.336, 0.324, 0.333] },
-  { id: 'p07_food', title: 'Good Food Brighter Moods',
-    box: [698, 366, 211, 204], depth: 1.0,
-    tint: [0.336, 0.243, 0.217] },
-  { id: 'p08_travel', title: 'Travel Explore Belong',
-    box: [844, 370, 195, 206], depth: 0.9,
-    tint: [0.26, 0.32, 0.366] },
-  { id: 'p09_space', title: 'Find Your Space',
-    box: [988, 364, 231, 208], depth: 0.8,
-    tint: [0.336, 0.283, 0.269] },
-  { id: 'p10_play', title: 'Play Create Repeat',
-    box: [1181, 251, 355, 242], depth: 0.3,
-    tint: [0.448, 0.305, 0.235] },
-  { id: 'p11_cleaner', title: 'Designing A Cleaner Tomorrow',
-    box: [118, 467, 345, 243], depth: 0.1,
-    tint: [0.311, 0.339, 0.263] },
-  { id: 'p12_steps', title: 'Small Steps Big Change',
-    box: [1139, 478, 325, 234], depth: 0.1,
-    tint: [0.31, 0.317, 0.302] },
+  { id: 'p01_web', title: 'Website Development',
+    box: [31, 88, 469, 288], depth: 0.45,
+    tint: [0.45, 0.35, 0.20] },
+  { id: 'p02_marketing', title: 'Digital Marketing',
+    box: [522, 100, 556, 288], depth: 0.60,
+    tint: [0.45, 0.35, 0.20] },
+  { id: 'p03_branding', title: 'Branding & Strategy',
+    box: [1100, 88, 469, 288], depth: 0.45,
+    tint: [0.45, 0.35, 0.20] },
+  { id: 'p04_social', title: 'Social Media Management',
+    box: [19, 444, 456, 272], depth: 0.25,
+    tint: [0.45, 0.35, 0.20] },
+  { id: 'p05_video', title: 'Video Production & Direction',
+    box: [484, 459, 594, 281], depth: 0.70,
+    tint: [0.45, 0.35, 0.20] },
+  { id: 'p06_pr', title: 'Celebrity PR & Influencer Marketing',
+    box: [1088, 444, 494, 272], depth: 0.25,
+    tint: [0.45, 0.35, 0.20] },
 ];
 
 // the central figure: crop box in frame px (his lighting is baked in)
-export const PERSON = { x: 718, y: 483, w: 160, h: 335 };
+export const PERSON = { x: 710, y: 440, w: 180, h: 420 };
 
 // the floor's lit ellipses (centre x, centre y, rx, ry) and the overhead ring,
 // used by the live glints the canvas draws over the baked plate
-export const FLOOR_OUT = [798, 735, 372, 80];
-export const FLOOR_IN = [798, 741, 240, 57];
-export const RING = [802, 34, 392, 148];
+export const FLOOR_OUT = [800, 830, 480, 110];
+export const FLOOR_IN = [800, 835, 320, 75];
+export const RING = [800, 60, 460, 160];
 
 /** Cover-fit the reference frame onto a viewport. */
 export function fitCover(w, h) {
@@ -63,20 +45,12 @@ export function fitCover(w, h) {
   return { s, ox: (w - FRAME[0] * s) / 2, oy: (h - FRAME[1] * s) / 2 };
 }
 
-// --------------------------------------------------------------------------
-// Portrait is a recomposition, not a crop: cover-fitting a 16:9 amphitheatre
-// to a phone leaves only the centre quarter on screen. The plate still cover-
-// fits (floor, circle and haze survive centred), and a curated set of cards
-// restacks into a column that keeps the reference hierarchy: hero screen up
-// top, the small row over the figure, the two green closers at his feet.
-// Entries: card index -> centre x/y (viewport fractions), width (vw fraction).
-// --------------------------------------------------------------------------
+// Portrait recomposition for tall phone viewports
 export const PORTRAIT = new Map([
-  [2, { cx: 0.50, cy: 0.235, w: 0.80 }],   // build
-  [0, { cx: 0.235, cy: 0.385, w: 0.50 }],  // timeless
-  [3, { cx: 0.77, cy: 0.39, w: 0.48 }],    // driven
-  [6, { cx: 0.325, cy: 0.53, w: 0.29 }],   // food
-  [7, { cx: 0.675, cy: 0.53, w: 0.29 }],   // travel
-  [10, { cx: 0.20, cy: 0.815, w: 0.48 }],  // cleaner
-  [11, { cx: 0.80, cy: 0.815, w: 0.48 }],  // steps
+  [1, { cx: 0.50, cy: 0.20, w: 0.88 }],  // Digital Marketing
+  [0, { cx: 0.28, cy: 0.38, w: 0.44 }],  // Website Development
+  [2, { cx: 0.72, cy: 0.38, w: 0.44 }],  // Branding & Strategy
+  [4, { cx: 0.50, cy: 0.56, w: 0.88 }],  // Video Production & Direction
+  [3, { cx: 0.28, cy: 0.74, w: 0.44 }],  // Social Media Management
+  [5, { cx: 0.72, cy: 0.74, w: 0.44 }],  // Celebrity PR
 ]);
