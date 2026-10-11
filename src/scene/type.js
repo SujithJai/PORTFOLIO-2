@@ -13,7 +13,7 @@
 // consistent with each other; per-letter fitting would distort the I into a slab
 // while squeezing the E, which is what makes lettering look counterfeit.
 
-const TEXT = 'GIREESH';
+const TEXT = 'SURJITH';
 
 // measured from the supplied hero artwork: ink width / cap height
 export const TARGET_RATIO = 3.121;
