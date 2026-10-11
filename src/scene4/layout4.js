@@ -23,15 +23,15 @@ export const CARDS = [
     box: [0, 378, 475, 325], depth: 0.25,
     tint: [0.45, 0.35, 0.20] },
   { id: 'p05_video', title: 'Video Production & Direction',
-    box: [475, 388, 606, 353], depth: 0.70,
+    box: [480, 420, 628, 284], depth: 0.70,
     tint: [0.45, 0.35, 0.20] },
   { id: 'p06_pr', title: 'Celebrity PR & Influencer Marketing',
-    box: [1072, 369, 516, 353], depth: 0.25,
+    box: [1114, 370, 486, 334], depth: 0.25,
     tint: [0.45, 0.35, 0.20] },
 ];
 
 // the central figure: crop box in frame px (his lighting is baked in)
-export const PERSON = { x: 710, y: 440, w: 180, h: 420 };
+export const PERSON = { x: 716, y: 410, w: 168, h: 455 };
 
 // the floor's lit ellipses (centre x, centre y, rx, ry) and the overhead ring,
 // used by the live glints the canvas draws over the baked plate
