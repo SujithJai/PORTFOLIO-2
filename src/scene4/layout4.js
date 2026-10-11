@@ -11,22 +11,22 @@ export const FRAME = [1600, 900];
 
 export const CARDS = [
   { id: 'p01_web', title: 'Website Development',
-    box: [31, 88, 469, 288], depth: 0.45,
+    box: [22, 47, 502, 366], depth: 0.45,
     tint: [0.45, 0.35, 0.20] },
   { id: 'p02_marketing', title: 'Digital Marketing',
-    box: [522, 100, 556, 288], depth: 0.60,
+    box: [531, 122, 559, 280], depth: 0.60,
     tint: [0.45, 0.35, 0.20] },
   { id: 'p03_branding', title: 'Branding & Strategy',
-    box: [1100, 88, 469, 288], depth: 0.45,
+    box: [1094, 47, 483, 363], depth: 0.45,
     tint: [0.45, 0.35, 0.20] },
   { id: 'p04_social', title: 'Social Media Management',
-    box: [19, 444, 456, 272], depth: 0.25,
+    box: [0, 378, 475, 325], depth: 0.25,
     tint: [0.45, 0.35, 0.20] },
   { id: 'p05_video', title: 'Video Production & Direction',
-    box: [484, 459, 594, 281], depth: 0.70,
+    box: [475, 388, 606, 353], depth: 0.70,
     tint: [0.45, 0.35, 0.20] },
   { id: 'p06_pr', title: 'Celebrity PR & Influencer Marketing',
-    box: [1088, 444, 494, 272], depth: 0.25,
+    box: [1072, 369, 516, 353], depth: 0.25,
     tint: [0.45, 0.35, 0.20] },
 ];
 
