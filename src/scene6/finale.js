@@ -28,7 +28,7 @@ export class Finale {
     this.texF = { man: texture(glF), grain: texture(glF, { wrap: 'repeat' }) };
     this.par = { x: 0, y: 0 };
     // the man's box in frame px, from fin.json - set by boot6
-    this.manBox = [580, 170, 450, 730];
+    this.manBox = [0, 138, 1367, 763];
   }
 
   async load() {
