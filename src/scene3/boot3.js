@@ -30,7 +30,7 @@ export async function initChrono() {
   const frontCanvas = document.getElementById('chronoFront');
   const glFront = frontCanvas ? createGL(frontCanvas, { alpha: true }) : null;
 
-  const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const reduced = false;
   // read LIVE, not captured at boot: a convertible flips this when it folds,
   // and a page restored under touch emulation would otherwise stay locked out
   const coarseMQ = matchMedia('(pointer: coarse)');
@@ -188,7 +188,7 @@ export async function initChrono() {
       state.visible = e.isIntersecting;
       if (e.isIntersecting) start(); else stop();
     }
-  }, { threshold: 0.22 }).observe(section);
+  }, { threshold: 0.08 }).observe(section);
 
   document.addEventListener('visibilitychange', () => {
     if (document.visibilityState === 'hidden') stop();

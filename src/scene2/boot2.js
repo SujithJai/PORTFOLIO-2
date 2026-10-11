@@ -19,7 +19,7 @@ export async function initUniverse() {
   const veil = document.getElementById('uniVeil');
   if (!section || !film || !veil) return null;
 
-  const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const reduced = false;
   const state = { visible: false, raf: 0, entered: false };
 
   const play = () => {
@@ -74,7 +74,7 @@ export async function initUniverse() {
         film.pause();
       }
     }
-  }, { threshold: 0.30 }).observe(section);
+  }, { threshold: 0.08 }).observe(section);
 
   document.addEventListener('visibilitychange', () => {
     if (document.visibilityState === 'hidden') film.pause();

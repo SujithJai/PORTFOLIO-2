@@ -29,7 +29,7 @@ export async function initFinale() {
   } catch { /* the default box matches the shipped extraction */ }
   await fin.load();
 
-  const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const reduced = false;
   const caps = [...section.querySelectorAll('.f-cap')];
   caps.forEach((el, i) => el.style.setProperty('--li', String(i)));
 
@@ -142,7 +142,7 @@ export async function initFinale() {
       state.visible = e.isIntersecting;
       if (e.isIntersecting) start(); else stop();
     }
-  }, { threshold: 0.30 }).observe(section);
+  }, { threshold: 0.08 }).observe(section);
 
   document.addEventListener('visibilitychange', () => {
     if (document.visibilityState === 'hidden') stop();

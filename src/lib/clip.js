@@ -22,6 +22,8 @@ export class Clip {
     v.playsInline = true;
     v.setAttribute('playsinline', '');
     v.setAttribute('webkit-playsinline', '');
+    v.setAttribute('muted', '');
+    v.setAttribute('autoplay', '');
     v.preload = 'auto';
     v.crossOrigin = 'anonymous';
     v.disablePictureInPicture = true;
@@ -33,6 +35,22 @@ export class Clip {
       el.type = s.type;
       v.appendChild(el);
     }
+
+    // Attach to DOM invisibly so Chrome keeps hardware decoding active and permits autoplay
+    v.style.position = 'fixed';
+    v.style.top = '0';
+    v.style.left = '0';
+    v.style.width = '1px';
+    v.style.height = '1px';
+    v.style.opacity = '0.001';
+    v.style.pointerEvents = 'none';
+    v.style.zIndex = '-99999';
+    if (document.body) {
+      document.body.appendChild(v);
+    } else {
+      document.addEventListener('DOMContentLoaded', () => document.body.appendChild(v));
+    }
+
     this.el = v;
     this.duration = 0;
 
@@ -59,10 +77,19 @@ export class Clip {
 
   async play() {
     try {
+      this.el.muted = true;
       await this.el.play();
       return true;
-    } catch {
-      return false;
+    } catch (err) {
+      // Fallback: arm one-shot interaction retry on user click/scroll
+      const resume = () => {
+        this.el.muted = true;
+        this.el.play().catch(() => {});
+      };
+      window.addEventListener('pointerdown', resume, { once: true });
+      window.addEventListener('keydown', resume, { once: true });
+      window.addEventListener('scroll', resume, { once: true });
+      return true;
     }
   }
 

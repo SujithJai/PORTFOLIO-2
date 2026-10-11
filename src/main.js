@@ -27,9 +27,7 @@ const MIN_BLACK = 620;          // the darkness must be felt, even on a fast lin
 const root = document.documentElement;
 const boot = document.getElementById('boot');
 const bootFill = document.getElementById('bootFill');
-const bootEnter = document.getElementById('bootEnter');
-
-const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const reduced = false;
 
 const app = {
   stage: null,
@@ -43,6 +41,7 @@ const app = {
   pointer: { x: 0, y: 0, tx: 0, ty: 0 },
   running: false,
 };
+window.__app = app;
 
 // --------------------------------------------------------------------------
 

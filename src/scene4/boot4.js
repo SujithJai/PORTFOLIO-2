@@ -33,7 +33,7 @@ export async function initGallery() {
   const gallery = new Gallery(canvas, gl);
   await gallery.load();
 
-  const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const reduced = false;
   const labels = [...section.querySelectorAll('.g-label')];
   const num = document.getElementById('galleryNum');
 
@@ -218,7 +218,7 @@ export async function initGallery() {
       state.visible = e.isIntersecting;
       if (e.isIntersecting) start(); else stop();
     }
-  }, { threshold: 0.22 }).observe(section);
+  }, { threshold: 0.08 }).observe(section);
 
   document.addEventListener('visibilitychange', () => {
     if (document.visibilityState === 'hidden') stop();
