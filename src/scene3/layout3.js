@@ -11,34 +11,34 @@
 
 export const YEARS = [
   {
-    year: 2021,
-    key: 'Beginning',
-    lines: ['New city', 'New chapter', 'Bigger dreams'],
+    year: 2019,
+    key: 'Social Media Executive',
+    lines: ['Polymer Media', 'Broadcast & Social Operations'],
   },
   {
     year: 2022,
-    key: 'Exploration',
-    lines: ['Learned design', 'Found direction'],
+    key: 'Social Media Manager',
+    lines: ['News Tamil 24/7', 'Live News & Digital Reach'],
   },
   {
     year: 2023,
-    key: 'Practice',
-    lines: ['Built skills', 'Made projects', 'Kept going'],
+    key: 'Digital Manager',
+    lines: ['Jaya TV Network', 'Television & Web Operations'],
   },
   {
     year: 2024,
-    key: 'Growth',
-    lines: ['Real projects', 'Real people', 'Real learning'],
+    key: 'Digital Marketing Manager',
+    lines: ['Aditya Music India', 'Music Marketing & Campaigns'],
   },
   {
     year: 2025,
-    key: 'Opportunities',
-    lines: ['Collaborated', 'Solved problems', 'Stepped up'],
+    key: 'Senior Marketing & Digital Manager',
+    lines: ['Orange Smith & Golden Diamonds', 'Brand Growth & Performance'],
   },
   {
     year: 2026,
-    key: 'Next chapter',
-    lines: ['Bigger goals', 'More impact', 'Still designing'],
+    key: 'Media Marketing Manager',
+    lines: ['Four D Motion Pictures', 'Film Marketing & Promotions'],
   },
 ];
 
