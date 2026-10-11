@@ -1,0 +1,17 @@
+{
+  "name": "gireesh-portfolio",
+  "version": "1.0.0",
+  "description": "Cinematic WebGL portfolio of Gireesh — artist, creative, storyteller",
+  "scripts": {
+    "start": "node tools/serve.js 5173",
+    "dev": "node tools/serve.js 5173"
+  },
+  "keywords": [
+    "webgl",
+    "portfolio",
+    "cinematic",
+    "creative"
+  ],
+  "author": "Gireesh",
+  "license": "UNLICENSED"
+}

@@ -275,6 +275,59 @@ window.addEventListener('keydown', (e) => {
   if (e.key === 'Escape' && root.classList.contains('is-menu')) setMenu(false);
 });
 
+// Primary navigation wiring (Home, Work, About, Journal, Contact)
+const NAV_TARGETS = {
+  Home: () => window.scrollTo({ top: 0, behavior: 'smooth' }),
+  Work: () => document.getElementById('gallery')?.scrollIntoView({ behavior: 'smooth' }),
+  About: () => document.getElementById('chrono')?.scrollIntoView({ behavior: 'smooth' }),
+  Journal: () => document.getElementById('universe')?.scrollIntoView({ behavior: 'smooth' }),
+  Contact: () => document.getElementById('fin')?.scrollIntoView({ behavior: 'smooth' }),
+};
+
+document.addEventListener('click', (e) => {
+  const link = e.target.closest('[data-nav]');
+  if (!link) return;
+  const label = link.textContent.trim();
+  const targetFn = NAV_TARGETS[label];
+  if (targetFn) {
+    e.preventDefault();
+    targetFn();
+    document.querySelectorAll('.hdr__nav a[data-nav], .menu a[data-nav]').forEach((a) => {
+      a.classList.toggle('is-active', a.textContent.trim() === label);
+    });
+  }
+});
+
+const SECTIONS = [
+  { id: 'hero-spacer', label: 'Home' },
+  { id: 'universe', label: 'Journal' },
+  { id: 'chrono', label: 'About' },
+  { id: 'gallery', label: 'Work' },
+  { id: 'fin', label: 'Contact' },
+];
+
+if ('IntersectionObserver' in window) {
+  const scrollObs = new IntersectionObserver((entries) => {
+    for (const entry of entries) {
+      if (entry.isIntersecting) {
+        const match = SECTIONS.find((s) => entry.target.id === s.id || entry.target.classList.contains(s.id));
+        if (match) {
+          document.querySelectorAll('.hdr__nav a[data-nav], .menu a[data-nav]').forEach((a) => {
+            a.classList.toggle('is-active', a.textContent.trim() === match.label);
+          });
+        }
+      }
+    }
+  }, { threshold: 0.35 });
+
+  const spacerEl = document.querySelector('.hero-spacer');
+  if (spacerEl) scrollObs.observe(spacerEl);
+  ['universe', 'chrono', 'gallery', 'fin'].forEach((id) => {
+    const el = document.getElementById(id);
+    if (el) scrollObs.observe(el);
+  });
+}
+
 // The hero is position:fixed behind the flow, so once scene two covers it there
 // is nothing to see - stop decoding its video rather than burning battery on
 // frames nobody is looking at.
