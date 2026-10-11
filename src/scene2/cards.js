@@ -13,18 +13,23 @@
 
 // name, centre x/y (fraction of the reference frame), apparent width, aspect
 const REF = [
-  ['photoshop', 0.320, 0.107, 0.180, 1.37],
-  ['figma', 0.170, 0.377, 0.142, 0.89],
-  ['aftereffects', 0.352, 0.397, 0.081, 1.14],
-  ['premiere', 0.305, 0.513, 0.069, 0.99],
-  ['notion', 0.251, 0.641, 0.091, 0.98],
-  ['lightroom', 0.395, 0.644, 0.070, 1.02],
-  ['claude', 0.666, 0.169, 0.140, 0.82],
-  ['chatgpt', 0.686, 0.469, 0.097, 1.25],
-  ['midjourney', 0.832, 0.386, 0.097, 1.04],
-  ['spline', 0.781, 0.575, 0.105, 1.81],
-  ['framer', 0.604, 0.609, 0.079, 1.02],
-  ['webflow', 0.685, 0.709, 0.085, 1.05],
+  // Left wing: Social & Performance Marketing
+  ['metaads', 0.200, 0.160, 0.145, 1.15],
+  ['googleads', 0.120, 0.360, 0.130, 1.05],
+  ['facebook', 0.340, 0.350, 0.088, 1.00],
+  ['instagram', 0.220, 0.510, 0.108, 1.00],
+  ['linkedin', 0.350, 0.590, 0.082, 1.00],
+  ['youtube', 0.150, 0.700, 0.115, 1.15],
+  ['x', 0.290, 0.750, 0.088, 1.00],
+
+  // Right wing: E-Commerce & Creative Production
+  ['shopify', 0.800, 0.160, 0.145, 1.15],
+  ['woocommerce', 0.660, 0.350, 0.092, 1.20],
+  ['wordpress', 0.880, 0.360, 0.130, 1.00],
+  ['photoshop', 0.780, 0.510, 0.110, 1.02],
+  ['premiere', 0.650, 0.590, 0.082, 1.00],
+  ['davinci', 0.850, 0.700, 0.115, 1.05],
+  ['canva', 0.710, 0.750, 0.088, 1.10],
 ];
 
 // the largest card in the poster is taken as the near plane
